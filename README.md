@@ -1,79 +1,190 @@
-# SoundWave Audio Player
+# ![SoundWave Logo](https://cdn.jsdelivr.net/gh/SH20RAJ/soundwave@main/assets/logo.svg) SoundWave
 
-SoundWave is a simple, customizable HTML5 audio player library designed to be lightweight and easy to integrate into any web project.
+**SoundWave** is a modern and customizable audio player library for creating sleek audio experiences on the web. With support for various controls and customization options, SoundWave is designed to be flexible and easy to use.
 
-## Features
-- Play/Pause control
-- Progress bar for seeking
-- Current time and duration display
-- Lightweight and easy to customize
+[![Version](https://img.shields.io/github/release/SH20RAJ/soundwave.svg)](https://github.com/SH20RAJ/soundwave/releases)
+[![License](https://img.shields.io/github/license/SH20RAJ/soundwave.svg)](https://opensource.org/licenses/MIT)
+[![CDN](https://img.shields.io/badge/CDN-Available-brightgreen.svg)](https://cdn.jsdelivr.net/gh/SH20RAJ/soundwave@main/js/soundwave.js)
 
-## Demo
-Check out the [live demo](https://github.com/SH20RAJ/soundwave).
+## Preview
 
-## Installation
+![SoundWave Preview](./assets/Screenshot 2024-07-25 at 4.14.15 PM.png)
 
-Clone the repository:
-```bash
-git clone https://github.com/SH20RAJ/soundwave.git
-```
+## Getting Started
 
-Include the SoundWave CSS and JavaScript files in your project:
+### Basic Usage
+
+To get started with SoundWave, include the CSS and JavaScript files:
+
+#### Using CDN
 
 ```html
-<link rel="stylesheet" href="path/to/css/soundwave.css">
-<script src="path/to/js/soundwave.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SH20RAJ/soundwave@main/css/soundwave.css">
+<script src="https://cdn.jsdelivr.net/gh/SH20RAJ/soundwave@main/js/soundwave.js"></script>
 ```
 
-## Usage
+#### Local Installation
 
-1. Create a container in your HTML where the audio player will be rendered:
-    ```html
-    <div id="audio-player-container"></div>
-    ```
+1. Download the latest release from the [GitHub releases page](https://github.com/SH20RAJ/soundwave/releases).
+2. Include the CSS and JavaScript files in your project:
 
-2. Initialize the SoundWave player with your audio file:
-    ```html
-    <script>
-        const audioPlayer = new SoundWave({
-            container: '#audio-player-container',
-            audioSrc: 'path/to/your/audio/file.mp3'
-        });
-    </script>
-    ```
+```html
+<link rel="stylesheet" href="path/to/soundwave.css">
+<script src="path/to/soundwave.js"></script>
+```
 
-## Configuration Options
+### Basic Player Setup
 
-The `SoundWave` class accepts the following options:
+To initialize a basic SoundWave player, use the following JavaScript code:
 
-- `container`: A CSS selector for the container where the audio player will be rendered.
-- `audioSrc`: The source URL of the audio file to be played.
-
-Example:
 ```javascript
-const audioPlayer = new SoundWave({
-    container: '#audio-player-container',
-    audioSrc: 'path/to/your/audio/file.mp3'
+const player = new SoundWave({
+    container: '#audio-player', // CSS selector for the container
+    audioSrc: 'path/to/your-audio-file.mp3', // Path to your audio file
+    height: '60px', // Height of the player
+    width: '400px', // Width of the player
 });
 ```
 
+This setup creates a player with default options. The player will be added to the element with the ID `audio-player`.
+
+---
+
+### Adding Custom SVG Icons
+
+To use custom SVG icons for the player controls, you can specify paths to your SVG files:
+
+```javascript
+const player = new SoundWave({
+    container: '#audio-player',
+    audioSrc: 'path/to/your-audio-file.mp3',
+    height: '60px',
+    width: '400px',
+    svgIcons: {
+        play: 'path/to/play.svg',
+        pause: 'path/to/pause.svg',
+        volume: 'path/to/volume.svg',
+        mute: 'path/to/mute.svg',
+        speed: 'path/to/speed.svg',
+        loop: 'path/to/loop.svg',
+        download: 'path/to/download.svg'
+    }
+});
+```
+
+This allows you to customize the icons used in the player.
+
+---
+
+### Showing Volume and Speed Controls
+
+To show additional controls like volume and speed, set the respective options to `true`:
+
+```javascript
+const player = new SoundWave({
+    container: '#audio-player',
+    audioSrc: 'path/to/your-audio-file.mp3',
+    height: '60px',
+    width: '400px',
+    svgIcons: {
+        play: 'path/to/play.svg',
+        pause: 'path/to/pause.svg',
+        volume: 'path/to/volume.svg',
+        mute: 'path/to/mute.svg',
+        speed: 'path/to/speed.svg',
+        loop: 'path/to/loop.svg',
+        download: 'path/to/download.svg'
+    },
+    showVolumeControl: true, // Show volume control
+    showSpeedControl: true, // Show playback speed control
+});
+```
+
+---
+
+### Adding Loop and Download Controls
+
+You can also add loop and download controls:
+
+```javascript
+const player = new SoundWave({
+    container: '#audio-player',
+    audioSrc: 'path/to/your-audio-file.mp3',
+    height: '60px',
+    width: '400px',
+    svgIcons: {
+        play: 'path/to/play.svg',
+        pause: 'path/to/pause.svg',
+        volume: 'path/to/volume.svg',
+        mute: 'path/to/mute.svg',
+        speed: 'path/to/speed.svg',
+        loop: 'path/to/loop.svg',
+        download: 'path/to/download.svg'
+    },
+    showVolumeControl: true,
+    showSpeedControl: true,
+    showLoopControl: true, // Show loop control
+    showDownloadControl: true // Show download control
+});
+```
+
+---
+
+### Full Example
+
+Here’s the complete configuration with all options enabled:
+
+```javascript
+const player = new SoundWave({
+    container: '#audio-player',
+    audioSrc: 'path/to/your-audio-file.mp3',
+    height: '60px',
+    width: '400px',
+    svgIcons: {
+        play: 'path/to/play.svg',
+        pause: 'path/to/pause.svg',
+        volume: 'path/to/volume.svg',
+        mute: 'path/to/mute.svg',
+        speed: 'path/to/speed.svg',
+        loop: 'path/to/loop.svg',
+        download: 'path/to/download.svg'
+    },
+    showVolumeControl: true, // Show volume control
+    showSpeedControl: true, // Show playback speed control
+    showLoopControl: true, // Show loop control
+    showDownloadControl: true // Show download control
+});
+```
+
+---
+
 ## Customization
 
-You can customize the appearance of the SoundWave player by modifying the `soundwave.css` file. The default CSS classes are:
+Customize the appearance of the player using CSS variables. Here’s an example of how to adjust colors and sizes:
 
-- `.soundwave-player`: The main container for the player.
-- `.soundwave-button`: The play/pause button.
-- `.soundwave-slider`: The progress bar.
-- `.soundwave-timestamp`: The current time and duration display.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+```css
+:root {
+    --player-bg-color: #fff;
+    --player-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --button-size: 24px;
+    --button-hover-bg: #e0e0e0;
+    --button-active-bg: #d0d0d0;
+    --progress-bg: #eee;
+    --progress-bar-color: #007bff;
+    --slider-thumb-color: #007bff;
+    --timestamp-color: #333;
+    --volume-slider-bg: #ddd;
+    --volume-slider-thumb-color: #007bff;
+    --speed-selector-bg: #fff;
+    --loop-color: #007bff; /* Default loop icon color */
+}
+```
 
 ## Contributing
 
-Contributions are welcome! Please fork the repository and create a pull request with your changes.
+If you have any issues or suggestions, feel free to [open an issue](https://github.com/SH20RAJ/soundwave/issues) or submit a pull request on GitHub.
 
-## Contact
+## License
 
-For any questions or suggestions, please open an issue or reach out to [SH20RAJ](https://github.com/SH20RAJ).
+SoundWave is licensed under the [MIT License](https://opensource.org/licenses/MIT). See the [LICENSE](https://github.com/SH20RAJ/soundwave/blob/main/LICENSE) file for details.
+
