@@ -1,13 +1,29 @@
+/* SoundWave Player CSS Variables */
+:root {
+    --player-bg-color: #fff;
+    --player-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --button-size: 24px;
+    --button-hover-bg: transparent;
+    --button-active-bg:#d1d1fb;
+    --progress-bg: #eee;
+    --progress-bar-color: #007bff;
+    --slider-thumb-color: #007bff;
+    --timestamp-color: #333;
+    --volume-slider-bg: #ddd;
+    --volume-slider-thumb-color: #007bff;
+    --speed-selector-bg: #fff;
+    --loop-color: #007bff; /* Default loop icon color */
+}
 
-/* SoundWave Player */
+/* General Styles */
 .soundwave-player {
     display: flex;
     align-items: center;
-    width: 300px;
-    padding: 10px;
+    background-color: var(--player-bg-color);
+    box-shadow: var(--player-shadow);
     border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    position: relative;
 }
 
 .soundwave-button {
@@ -17,8 +33,9 @@
     outline: none;
     padding: 0;
     margin: 0 10px;
-    width: 24px;
-    height: 24px;
+    width: var(--button-size);
+    height: var(--button-size);
+    transition: background-color 0.3s ease, opacity 0.3s ease;
 }
 
 .soundwave-button img {
@@ -26,21 +43,59 @@
     height: 100%;
 }
 
-.soundwave-slider {
+.soundwave-button:hover {
+    background-color: var(--button-hover-bg);
+    border-radius: 50%;
+    /* padding: 2px; */
+}
+
+.soundwave-button.active {
+    background-color: var(--button-active-bg);
+    border-radius: 50%;
+    
+}
+
+/* Specific Icon Colors */
+.soundwave-button img[src$="loop.svg"] {
+    fill: var(--loop-color);
+}
+
+.soundwave-progress-container {
     flex: 1;
+    display: flex;
+    align-items: center;
+    height: 10px;
+    background: var(--progress-bg);
+    border-radius: 5px;
+    position: relative;
     margin: 0 10px;
+}
+
+.soundwave-progress-bar {
+    height: 100%;
+    background: var(--progress-bar-color);
+    border-radius: 5px 0 0 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+.soundwave-slider {
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+    height: 10px;
+    cursor: pointer;
     -webkit-appearance: none;
-    height: 4px;
-    background: #ddd;
-    border-radius: 2px;
-    outline: none;
 }
 
 .soundwave-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 12px;
     height: 12px;
-    background: #007bff;
+    background: var(--slider-thumb-color);
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
@@ -49,7 +104,7 @@
 .soundwave-slider::-moz-range-thumb {
     width: 12px;
     height: 12px;
-    background: #007bff;
+    background: var(--slider-thumb-color);
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
@@ -57,6 +112,49 @@
 
 .soundwave-timestamp {
     font-size: 12px;
-    color: #333;
+    color: var(--timestamp-color);
     margin-left: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.soundwave-volume,
+.soundwave-speed {
+    -webkit-appearance: none;
+    height: 4px;
+    background: var(--volume-slider-bg);
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+    width: 50px;
+    display: none;
+}
+
+.soundwave-speed {
+    width: auto;
+}
+
+.soundwave-button:hover .soundwave-volume,
+.soundwave-button:hover .soundwave-speed {
+    display: block;
+}
+
+.soundwave-volume {
+    transition: opacity 0.3s ease;
+}
+
+.soundwave-speed {
+    transition: opacity 0.3s ease;
+}
+
+.soundwave-speed-selector {
+    display: none;
+    background: var(--speed-selector-bg);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.soundwave-speed-selector option {
+    padding: 5px;
 }
