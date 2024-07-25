@@ -29,8 +29,8 @@ To get started with SoundWave, include the CSS and JavaScript files:
 #### Using CDN
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SH20RAJ/soundwave@main/css/soundwave.css">
-<script src="https://cdn.jsdelivr.net/gh/SH20RAJ/soundwave@main/js/soundwave.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SH20RAJ/soundwave@main/css/soundwave.min.css">
+<script src="https://cdn.jsdelivr.net/gh/SH20RAJ/soundwave@main/js/soundwave.min.js"></script>
 ```
 
 #### Local Installation
