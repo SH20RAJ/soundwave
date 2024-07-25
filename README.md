@@ -1,6 +1,15 @@
-# ![SoundWave Logo](https://cdn.jsdelivr.net/gh/SH20RAJ/soundwave@main/assets/logo.svg) SoundWave
+
+# SoundWave
 
 **SoundWave** is a modern and customizable audio player library for creating sleek audio experiences on the web. With support for various controls and customization options, SoundWave is designed to be flexible and easy to use.
+
+
+<p align="center">
+
+<img src="https://cdn.jsdelivr.net/gh/SH20RAJ/soundwave@main/assets/logo.svg" width="50%">
+
+</p>
+
 
 [![Version](https://img.shields.io/github/release/SH20RAJ/soundwave.svg)](https://github.com/SH20RAJ/soundwave/releases)
 [![License](https://img.shields.io/github/license/SH20RAJ/soundwave.svg)](https://opensource.org/licenses/MIT)
