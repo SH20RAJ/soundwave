@@ -179,19 +179,19 @@ class SoundWave {
 
         switch (name) {
             case 'play':
-                return `<img src="assets/play.svg" alt="Play">`;
+                return `<img src="https://cdn.jsdelivr.net/gh/SH20RAJ/soundwave@latest/assets/play.svg" alt="Play">`;
             case 'pause':
-                return `<img src="assets/pause.svg" alt="Pause">`;
+                return `<img src="https://cdn.jsdelivr.net/gh/SH20RAJ/soundwave@latest/assets/pause.svg" alt="Pause">`;
             case 'volume':
-                return `<img src="assets/volume.svg" alt="Volume">`;
+                return `<img src="https://cdn.jsdelivr.net/gh/SH20RAJ/soundwave@latest/assets/volume.svg" alt="Volume">`;
             case 'mute':
-                return `<img src="assets/mute.svg" alt="Mute">`;
+                return `<img src="https://cdn.jsdelivr.net/gh/SH20RAJ/soundwave@latest/assets/mute.svg" alt="Mute">`;
             case 'speed':
-                return `<img src="assets/speed.svg" alt="Speed">`;
+                return `<img src="https://cdn.jsdelivr.net/gh/SH20RAJ/soundwave@latest/assets/speed.svg" alt="Speed">`;
             case 'loop':
-                return `<img src="assets/loop.svg" alt="Loop">`;
+                return `<img src="https://cdn.jsdelivr.net/gh/SH20RAJ/soundwave@latest/assets/loop.svg" alt="Loop">`;
             case 'download':
-                return `<img src="assets/download.svg" alt="Download">`;
+                return `<img src="https://cdn.jsdelivr.net/gh/SH20RAJ/soundwave@latest/assets/download.svg" alt="Download">`;
             default:
                 return '';
         }
