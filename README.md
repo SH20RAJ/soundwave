@@ -5,10 +5,11 @@
 [![Version](https://img.shields.io/github/release/SH20RAJ/soundwave.svg)](https://github.com/SH20RAJ/soundwave/releases)
 [![License](https://img.shields.io/github/license/SH20RAJ/soundwave.svg)](https://opensource.org/licenses/MIT)
 [![CDN](https://img.shields.io/badge/CDN-Available-brightgreen.svg)](https://cdn.jsdelivr.net/gh/SH20RAJ/soundwave@main/js/soundwave.js)
+[![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2FSH20RAJ%2Fsoundwave&labelColor=%232ccce4&countColor=%23ba68c8&style=flat)](https://visitorbadge.io/status?path=https%3A%2F%2Fgithub.com%2FSH20RAJ%2Fsoundwave)
 
 ## Preview
 
-![SoundWave Preview](./assets/Screenshot 2024-07-25 at 4.14.15 PM.png)
+![SoundWave Preview](https://cdn.jsdelivr.net/gh/SH20RAJ/soundwave@main/assets/screenshot.png)
 
 ## Getting Started
 
